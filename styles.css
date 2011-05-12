@@ -1,0 +1,30 @@
+.table {border-style: double; border-color: black; background-color: gray; color: inherit} /*table format*/
+/*table header*/
+.head {border-style: double; border-color: black; font-weight: bold; background-color: silver; text-align: center; color: inherit}
+/*table cells*/
+.cell {border-style: double; border-color: black; text-align: left; background-color: yellow; color:inherit}
+.margin {margin: 2em 3em} /*page margin*/
+.group {position: relative} /*division of the metainfo*/
+.left {text-align: left; left: 0; position: absolute} /*align metainfo to the left*/
+.right {text-align: right; right: 0; position: relative} /*align metainfo to the right*/
+.just {white-space:pre-line; text-align:justify}
+.linkleft {left: 3em; position: absolute}
+.linkright {right: 3em; position: absolute}
+.linkcenter {position: relative}
+.padding {padding-right: 4em} /*padding the author info*/
+
+.title {text-align: left; font-weight: bold} /*example title*/
+.out {list-style: outside} /*itemize display*/
+.in {list-style: inside} /*itemize display*/
+.disp {display: list-item} /*itemize display*/
+.format {font-size: 18pt; text-align: left; font-weight: bold} /*titles format*/
+.subj {text-align: left; font-weight: bold; font-size: 14pt} /*subtitle format*/
+.upper {text-transform: uppercase; font-weight: bold; text-align: left} /*Notes transformation*/
+
+.wrap {white-space: nowrap} /*prevent subscript, superscript or url separation*/
+.upper {text-transform: uppercase} /*uppercase conversion*/
+.space {white-space: pre} /*preserve spaces in code sections*/
+
+.chp {text-align: center; font-weight: bold; font-size: 24pt} /*chapter format*/
+.sec {text-align: left; font-weight: bold; font-size: 18pt} /*section format*/
+.sub {text-align: left; font-weight: bold; font-size: 16pt} /*subsection format*/

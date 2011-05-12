@@ -1,0 +1,37 @@
+\select@language {portuges}
+\contentsline {section}{\numberline {1}\relax \fontsize {17.28}{22}\selectfont Introdu\IeC {\c c}\IeC {\~a}o}{2}
+\contentsline {section}{\numberline {2}\relax \fontsize {17.28}{22}\selectfont Descri\IeC {\c c}\IeC {\~a}o do Problema}{3}
+\contentsline {subsection}{\numberline {2.1}\relax \fontsize {12}{14}\selectfont Breve Introdu\IeC {\c c}\IeC {\~a}o ao Problema}{3}
+\contentsline {subsection}{\numberline {2.2}Objectivos a Cumprir}{3}
+\contentsline {section}{\numberline {3}\relax \fontsize {17.28}{22}\selectfont Schema}{4}
+\contentsline {subsection}{\numberline {3.1}\relax \fontsize {12}{14}\selectfont Designa\IeC {\c c}\IeC {\~a}o dos Elementos}{4}
+\contentsline {subsection}{\numberline {3.2}\relax \fontsize {12}{14}\selectfont Principais Decis\IeC {\~o}es}{5}
+\contentsline {subsection}{\numberline {3.3}\relax \fontsize {12}{14}\selectfont Elementos Principais}{6}
+\contentsline {section}{\numberline {4}\relax \fontsize {17.28}{22}\selectfont Gerar PDF com XSL:FO}{9}
+\contentsline {subsection}{\numberline {4.1}\relax \fontsize {12}{14}\selectfont Gerar a Capa do Livro}{9}
+\contentsline {subsection}{\numberline {4.2}\relax \fontsize {12}{14}\selectfont Gerar os \IeC {\'\i }ndices}{10}
+\contentsline {subsection}{\numberline {4.3}\relax \fontsize {12}{14}\selectfont Gerar as V\IeC {\'a}rias Sec\IeC {\c c}\IeC {\~o}es do Livro}{11}
+\contentsline {subsection}{\numberline {4.4}\relax \fontsize {12}{14}\selectfont Gerar os Cap\IeC {\'\i }tulos, Sec\IeC {\c c}\IeC {\~o}es e SubSec\IeC {\c c}\IeC {\~o}es}{13}
+\contentsline {subsection}{\numberline {4.5}\relax \fontsize {12}{14}\selectfont Regras Para o Conte\IeC {\'u}do (texto, figuras, tabelas, etc.)}{14}
+\contentsline {subsubsection}{\numberline {4.5.1}Par\IeC {\'a}grafo}{15}
+\contentsline {subsubsection}{\numberline {4.5.2}Defini\IeC {\c c}\IeC {\~o}es}{15}
+\contentsline {subsubsection}{\numberline {4.5.3}Marcas e Numera\IeC {\c c}\IeC {\~a}o}{16}
+\contentsline {subsubsection}{\numberline {4.5.4}Exemplos, Figuras e Tabelas}{17}
+\contentsline {section}{\numberline {5}\relax \fontsize {17.28}{22}\selectfont Gerar HTML com XSL}{18}
+\contentsline {subsection}{\numberline {5.1}\relax \fontsize {12}{14}\selectfont Especifica\IeC {\c c}\IeC {\~a}o Funcional}{18}
+\contentsline {subsection}{\numberline {5.2}\relax \fontsize {12}{14}\selectfont \emph {Layout} dos Elementos}{20}
+\contentsline {subsection}{\numberline {5.3}\relax \fontsize {12}{14}\selectfont Principais Decis\IeC {\~o}es e Desafios}{22}
+\contentsline {subsubsection}{\numberline {5.3.1}Index}{22}
+\contentsline {subsubsection}{\numberline {5.3.2}Contadores}{22}
+\contentsline {subsubsection}{\numberline {5.3.3}Cap\IeC {\'\i }tulos}{23}
+\contentsline {subsubsection}{\numberline {5.3.4}Refer\IeC {\^e}ncias}{24}
+\contentsline {subsubsection}{\numberline {5.3.5}Diapositivos}{25}
+\contentsline {subsubsection}{\numberline {5.3.6}\IeC {\'\i }ndices}{26}
+\contentsline {subsubsection}{\numberline {5.3.7}CSS}{26}
+\contentsline {section}{\numberline {6}\relax \fontsize {17.28}{22}\selectfont Oxygen Author}{27}
+\contentsline {subsection}{\numberline {6.1}Atributos}{28}
+\contentsline {subsection}{\numberline {6.2}\emph {After} e \emph {before}}{28}
+\contentsline {subsection}{\numberline {6.3}Contadores}{28}
+\contentsline {section}{\numberline {7}\relax \fontsize {17.28}{22}\selectfont Resultados Obtidos}{30}
+\contentsline {section}{\numberline {8}\relax \fontsize {17.28}{22}\selectfont Conclus\IeC {\~a}o}{31}
+\contentsline {section}{\relax \fontsize {17.28}{22}\selectfont Glossary}{32}

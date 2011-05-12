@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="xbook">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="metainfo"/>
+                <xs:element ref="preface"/>
+                <xs:element ref="intro"/>
+                <xs:element ref="body"/>
+                <xs:element ref="conclusion"/>
+                <xs:element ref="rec_read" minOccurs="0"/>
+                <xs:element ref="exercises" minOccurs="0"/>
+                <xs:element ref="appendix" minOccurs="0"/>
+                <xs:element ref="glossary" minOccurs="0"/>
+                <xs:element ref="index" minOccurs="0"/>
+                <xs:element ref="bibliography" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ind" type="label" use="required"/>
+            <xs:attribute name="tof" type="label" use="optional"/>
+            <xs:attribute name="tot" type="label" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="metainfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="subtitle" minOccurs="0"/>
+                <xs:element ref="frontcover" minOccurs="0"/>
+                <xs:element ref="authors"/>
+                <xs:element ref="local" minOccurs="0"/>
+                <xs:element ref="publisher"/>
+                <xs:element ref="date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="preface">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="textblock"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="intro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="textblock"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="body">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="chapter"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="chapter">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element maxOccurs="unbounded" ref="section"/>
+                <xs:element minOccurs="0" ref="exercises"/>
+                <xs:element ref="summary"/>
+            </xs:sequence>
+            <xs:attribute name="label" type="label" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="section">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="textblock"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="subsection"/>
+            </xs:sequence>
+            <xs:attribute name="label" type="label" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="subsection">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="textblock"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="subsection"/>
+            </xs:sequence>
+            <xs:attribute name="label" type="label" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="conclusion">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="textblock"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="rec_read">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="textblock"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="exercises">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="exercise" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="appendix">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="textblock"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="glossary">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="define" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="index">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="char"/>
+                <xs:element ref="lstTerms"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="bibliography">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="entry"/>
+            </xs:sequence>
+            <xs:attribute name="title" type="text" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="entry">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" maxOccurs="unbounded"/>
+                <xs:element ref="title"/>
+                <xs:element ref="local" minOccurs="0"/>
+                <xs:element ref="publisher" minOccurs="0"/>
+                <xs:element ref="year"/></xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="summary">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="textblock"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="exercise">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="textblock"/>
+                <xs:element ref="exercise" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="date" type="xs:date"/>
+    <xs:element name="local" type="text"/>
+    <xs:element name="authors">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="author"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="author">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name"/>
+                <xs:element ref="id" minOccurs="0"/>
+                <xs:element ref="photo" minOccurs="0"/>
+                <xs:element ref="email" minOccurs="0"/>
+                <xs:element ref="webpage" minOccurs="0"/>
+                <xs:element ref="degree" minOccurs="0"/>
+                <xs:element ref="rank" minOccurs="0"/>
+                <xs:element ref="affiliation" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="publisher" type="text"/>
+    <xs:element name="frontcover">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="img"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="name" type="text"/>
+    <xs:element name="email" type="text"/>
+    <xs:element name="id" type="text"/>
+    <xs:element name="degree" type="text"/>
+    <xs:element name="rank" type="text"/>
+    <xs:element name="affiliation" type="text"/>
+    <xs:element name="webpage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="url"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="photo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="img"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="textblock">
+        <xs:complexType mixed="true">
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="paragraph"/>
+                <xs:element ref="define"/>
+                <xs:element ref="itemize"/>
+                <xs:element ref="enumeration"/>
+                <xs:element ref="subtitle"/>
+                <xs:element ref="note"/>
+                <xs:element ref="example"/>
+                <xs:element ref="table"/>
+                <xs:element ref="equation"/>
+                <xs:element ref="obs"/>
+                <xs:element ref="code"/>
+                <xs:element ref="fig"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="paragraph">
+        <xs:complexType mixed="true">
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+                <xs:element ref="italic"/>
+                <xs:element ref="bold"/>
+                <xs:element ref="super"/>
+                <xs:element ref="sub"/>
+                <xs:element ref="strike"/>
+                <xs:element ref="term"/>
+                <xs:element ref="under"/>
+                <xs:element ref="exp"/>
+                <xs:element ref="citation"/>
+                <xs:element ref="year"/>
+                <xs:element ref="url"/>
+                <xs:element ref="figref"/>
+                <xs:element ref="tabref"/>
+                <xs:element ref="secref"/>
+                <xs:element ref="chpref"/>
+                <xs:element ref="exref"/>
+                <xs:element ref="local"/>
+                <xs:element ref="name"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="table">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="header" maxOccurs="1"/>
+                <xs:element ref="hline" maxOccurs="unbounded"/>
+                <xs:element ref="caption"/>
+            </xs:sequence>
+            <xs:attribute type="label" name="label" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="hline">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="cell"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="cell">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="paragraph"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="header">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="cell"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="define">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="term"/>
+                <xs:element ref="paragraph"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="itemize">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="enumeration">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="enum"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="item">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element ref="paragraph"/>
+                <xs:element ref="define"/>
+                <xs:element ref="itemize"/>
+                <xs:element ref="enumeration"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="enum">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element ref="paragraph"/>
+                <xs:element ref="define"/>
+                <xs:element ref="itemize"/>
+                <xs:element ref="enumeration"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="example">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="ex" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="label" use="required" type="label"/>
+            <xs:attribute name="ref" use="optional" type="label"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ex">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="paragraph"/>
+                <xs:element ref="define"/>
+                <xs:element ref="code"/>
+                <xs:element ref="fig"/>
+                <xs:element ref="table"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="fig">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="img"/>
+                <xs:element ref="caption"/>
+            </xs:sequence>
+            <xs:attribute name="label" type="label" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="img">
+        <xs:complexType>
+            <xs:attribute name="path" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="caption">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="bold"/>
+                <xs:element ref="under"/>
+                <xs:element ref="sub"/>
+                <xs:element ref="super"/>
+                <xs:element ref="strike"/>
+                <xs:element ref="italic"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="title">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="under"/>
+                <xs:element ref="sub"/>
+                <xs:element ref="super"/>
+                <xs:element ref="strike"/>
+                <xs:element ref="italic"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="subtitle">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="italic"/>
+                <xs:element ref="under"/>
+                <xs:element ref="sub"/>
+                <xs:element ref="super"/>
+                <xs:element ref="strike"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="code">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="comment"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="note">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="paragraph"/>
+            </xs:sequence>
+            <xs:attribute name="label" type="label" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="comment" type="text"/>
+    <xs:element name="italic">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="year"/>
+                <xs:element ref="bold"/>
+                <xs:element ref="under"/>
+                <xs:element ref="sub"/>
+                <xs:element ref="super"/>
+                <xs:element ref="strike"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="bold">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="year"/>
+                <xs:element ref="italic"/>
+                <xs:element ref="under"/>
+                <xs:element ref="sub"/>
+                <xs:element ref="super"/>
+                <xs:element ref="strike"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="super">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="year"/>
+                <xs:element ref="term"/>
+                <xs:element ref="italic"/>
+                <xs:element ref="under"/>
+                <xs:element ref="bold"/>
+                <xs:element ref="strike"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="sub">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="year"/>
+                <xs:element ref="term"/>
+                <xs:element ref="italic"/>
+                <xs:element ref="under"/>
+                <xs:element ref="bold"/>
+                <xs:element ref="strike"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="strike">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="year"/>
+                <xs:element ref="term"/>
+                <xs:element ref="italic"/>
+                <xs:element ref="under"/>
+                <xs:element ref="bold"/>
+                <xs:element ref="super"/>
+                <xs:element ref="sub"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="lstTerms">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="term"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="equation" type="text"/>
+    <xs:element name="term" type="text"/>
+    <xs:element name="under">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="year"/>
+                <xs:element ref="term"/>
+                <xs:element ref="bold"/>
+                <xs:element ref="italic"/>
+                <xs:element ref="sub"/>
+                <xs:element ref="super"/>
+                <xs:element ref="strike"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="obs">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="year"/>
+                <xs:element ref="term"/>
+                <xs:element ref="italic"/>
+                <xs:element ref="under"/>
+                <xs:element ref="bold"/>
+                <xs:element ref="super"/>
+                <xs:element ref="sub"/>
+                <xs:element ref="strike"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="exp" type="text"/>
+    <xs:element name="citation" type="text"/>
+    <xs:element name="year" type="xs:gYear"/>
+    <xs:element name="char" type="xs:string"/>
+    <xs:element name="url" type="xs:anyURI"/>
+    <xs:element name="figref" type="text"/>
+    <xs:element name="tabref" type="text"/>
+    <xs:element name="secref" type="text"/>
+    <xs:element name="chpref" type="text"/>
+    <xs:element name="exref" type="text"/>
+    <xs:simpleType name="label">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="text">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+</xs:schema>

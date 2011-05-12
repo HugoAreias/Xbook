@@ -1,0 +1,475 @@
+xbook{
+    display:block;
+    margin:2em;
+    counter-reset:tab fig exm;
+}
+
+preface, intro, conclusion, rec_read, appendix, glossary{
+    display:block;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+body{
+    display:block;
+    counter-reset:chp;
+}
+
+chapter{
+    display:block;
+    padding-top:1em;
+    padding-bottom:1em;
+    counter-increment:chp;
+    counter-reset:sec;
+}
+
+section{
+    display:block;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+subsection{
+    display:block;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+section > title:before{
+    counter-increment:sec;
+    content:counter(sec)". ";
+    counter-reset:subsec;
+}
+
+subsection > title:before{
+    counter-increment:subsec;
+    content:counter(sec)"."counters(subsec,".")" ";
+}
+
+textblock + subsection{
+    counter-reset:subsec;
+}
+
+exercises{
+    display:block;
+    padding-top:1em;
+    padding-bottom:1em;
+    counter-reset:exec;
+}
+
+textblock + exercise{
+    counter-reset:exec;
+}
+
+exercises exercise{
+    display:block;
+    counter-increment:exec;
+    content:counters(exec,".")") ";
+}
+
+index{
+    display:none;
+}
+
+bibliography{
+    display:block;
+    text-align:left;
+    font-weight:bold;
+    font-size:18pt;
+    padding-top:1em;
+    padding-bottom:1em;
+    content:attr(title);
+}
+
+summary{
+    display:block;
+}
+
+/*Metainfo*/
+
+metainfo > title{
+    display:block;
+    font-family:helvetica, arial, sans-serif;
+    text-align:center;
+    font-weight:bold;
+    font-size:20pt;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+metainfo > subtitle{
+    display:block;
+    font-family:helvetica, arial, sans-serif;
+    text-align:center;
+    font-weight:bold;
+    font-size:18pt;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+metainfo > authors{
+    display:inherit;
+    text-align:center;
+}
+
+author{
+    display:block;
+}
+
+author > name, author > id, author > degree, author > rank, author > affiliation, author > email, author > webpage, author > photo{
+    display:inherit;
+}
+
+metainfo > frontcover, metainfo > local, metainfo > publisher, metainfo > date{
+    display:block;
+    text-align:center;
+}
+
+/*Text Blocks*/
+
+textblock{
+    display:run-in;
+}
+
+paragraph{
+    display:run-in;
+}
+
+code{
+    display:block;
+    white-space:pre;
+    font-size:small;
+    font-family:monospace;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+comment:before{
+    content:"  #";
+}
+
+comment{
+    display:run-in;
+    font-style:italic;
+    font-family:arial, helvetica, sans-serif;
+    font-size:small;
+}
+
+item > define, enum > define{
+    display:run-in;
+    padding:0em 0em;
+}
+
+define{
+    display:block;
+    padding:1em 1.5em;
+}
+
+entry{
+    display:block;
+    text-align:left;
+    font-weight:normal;
+    font-size:9pt;
+    padding:0.5em;
+}
+
+entry > title, entry > local, entry > name, entry > publisher, entry > year{
+    display:run-in;
+    font-style:italic;
+    font-size:10pt;
+    font-weight:normal;
+    padding:0.1em 0em;
+}
+
+entry > title:after, entry > local:after, entry > name:after, entry > publisher:after{
+    content:", ";
+}
+
+example:before{
+    text-align:left;
+    font-weight:bold;
+    font-size:12pt;
+    counter-increment:exm;
+    content:attr(label)" "counter(exm)":";
+}
+
+example{
+    display:block;
+    padding:1em 0em;
+}
+
+example > title{
+    display:inline;
+    text-align:left;
+    font-weight:bold;
+    font-size:12pt;
+}
+
+note:before{
+    font-weight:bold;
+    font-size:12pt;
+    content:attr(label)": ";
+}
+
+note{
+    display:block;
+    padding:1em 0em;
+}
+
+/*Itemize & Enumeration*/
+
+itemize{
+    display:list-item;
+    list-style:circle;
+}
+
+item{
+    display:list-item;
+    list-style:circle outside;
+}
+
+item item{
+    list-style:square inside;
+    padding-left:2em;
+}
+
+enumeration{
+    display:block;
+    counter-reset:enum;
+}
+
+enum{
+    display:block;
+    counter-increment:enum;
+    content:counters(enum,".");
+}
+
+enum enum, enum item, item enum{
+    padding-left:2em;
+}
+
+/*Table*/
+
+table{
+    margin-top:2em;
+    display:table;
+    color:inherit;
+    text-align:center;
+    background-color:orange;
+    border:1px solid black;
+    width:50%;
+}
+
+header{
+    display:table-row;
+    color:inherit;
+    background-color:silver;
+}
+
+hline{
+    display:table-row;
+}
+
+cell{
+    display:table-cell;
+    border:1px solid black;
+}
+
+table > caption{
+    display:table-caption;
+    font-size:small;
+}
+
+table > caption:before{
+    counter-increment:tab;
+    content:"Tab "counter(tab)". ";
+}
+
+/*Figures*/
+
+fig{
+    counter-increment:fig;
+}
+
+fig > caption:before{
+    content:"Fig "counter(fig)". ";
+}
+
+fig > caption{
+    display:table-caption;
+    font-size:small;
+    text-align:center;
+}
+
+/*Titles & subtitles*/
+
+chapter > title{
+    display:block;
+    content:counter(chp,upper-roman)". ";
+    font-family:arial, helvetica, sans-serif;
+    text-align:center;
+    font-weight:bold;
+    font-size:24pt;
+    padding-bottom:1em;
+}
+
+preface > title,intro > title,section > title,conclusion > title,
+rec_read > title,exercises > title,appendix > title,glossary > title,index > title,summary > title{
+    display:block;
+    text-align:left;
+    font-weight:bold;
+    font-size:18pt;
+    padding-bottom:1em;
+}
+
+subsection > title{
+    display:block;
+    text-align:left;
+    font-weight:bold;
+    font-size:16pt;
+    padding-bottom: 1em;
+}
+
+* * subsection > title{
+    font-size:14pt;
+    padding-bottom: 1em;
+}
+
+title{
+    display:block;
+    text-align:left;
+    font-weight:bold;
+    font-size: 16pt;
+}
+
+subtitle{
+    display:block;
+    text-align:left;
+    font-weight:bold;
+    font-size:12pt;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+}
+
+/*Text Properties*/
+
+term{
+    display:inline;
+    font-weight:bolder;
+}
+
+exp{
+    display:inline;
+    font-style:italic;
+    font:small helvetica, arial, sans-serif;
+}
+
+exp:before{
+    content:open-quote;
+}
+
+exp:after{
+    content:close-quote;
+}
+
+citation{
+    display:inline;
+}
+
+obs{
+    display:block;
+    text-align:center;
+    font:small helvetica, arial, sans-serif;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+equation{
+    display:block;
+    text-align:center;
+    font-family:"Gill Sans",sans-serif;
+    font-size:small;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+/*Text Format*/
+
+bold{
+    display:inline;
+    font-weight:bold;
+}
+
+super{
+    display:inline;
+    vertical-align:super;
+    white-space:nowrap;
+}
+
+sub{
+    display:inline;
+    vertical-align:sub;
+    white-space:nowrap;
+}
+
+strike{
+    display:inline;
+    text-decoration:line-through;
+}
+
+italic{
+    display:inline;
+    font-style:italic;
+}
+
+under{
+    display:inline;
+    text-decoration:underline;
+}
+
+/*Special Types*/
+
+local{
+    display:inline;
+    font-size:10pt;
+    font-style:italic;
+}
+
+name{
+    display:inline;
+}
+
+/*URL & Images*/
+
+img{
+    display:block;
+    text-align:center;
+    content:attr(path,url);
+}
+
+url{
+    display:inline;
+    white-space:nowrap;
+    font-style:oblique;
+    content:path;
+}
+
+/*References*/
+
+tabref,figref,secref,chpref,exref{
+    display:inline;
+    font-style:oblique;
+}
+
+tabref:before,figref:before,secref:before,chpref:before,exref:before{
+    content:"{";
+}
+
+tabref:after,figref:after,secref:after,chpref:after,exref:after{
+    content:"}";
+}
+
+section > textblock paragraph, subsection > textblock paragraph, preface > textblock paragraph, intro > textblock paragraph,
+conclusion > textblock paragraph, appendix > textblock paragraph, rec_read > textblock paragraph{
+    white-space:pre-line;
+}

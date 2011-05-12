@@ -1,0 +1,28 @@
+\begin{theglossary}\glogroupC
+
+\gloitem {\glosslabel{glo:CSS}{CSS}}Cascading Style Sheets\relax
+\glodelim 
+		\glsnumformat{3}\delimN \glsnumformat{18}\delimN 
+		\glsnumformat{26}\delimT \gloskip \glogroupH
+
+\gloitem {\glosslabel{glo:HTML}{HTML}}HyperText Markup Language\relax
+\glodelim 
+		\glsnumformat{2\delimN 3}\delimN \glsnumformat{5}\delimN 
+		\glsnumformat{18}\delimN \glsnumformat{20\delimR 22}\delimN 
+		\glsnumformat{24\delimR 26}\delimN 
+		\glsnumformat{31\delimN 32}\delimT \gloskip \glogroupP
+
+\gloitem {\glosslabel{glo:PDF}{PDF}}Portable Document Format\relax
+\glodelim 
+		\glsnumformat{2\delimN 3}\delimN \glsnumformat{5}\delimN 
+		\glsnumformat{31\delimN 32}\delimT \gloskip \glogroupX
+
+\gloitem {\glosslabel{glo:XML}{XML}}Extensible Markup Language\relax
+\glodelim 
+		\glsnumformat{2\delimN 3}\delimN \glsnumformat{18}\delimN 
+		\glsnumformat{31\delimN 32}\delimT 
+
+\gloitem {\glosslabel{glo:XSL}{XSL}}Extensible Stylesheet Language\relax
+\glodelim 
+		\glsnumformat{3}\delimT 
+\end{theglossary}
